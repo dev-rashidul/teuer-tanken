@@ -1,0 +1,673 @@
+/* Base Styles CSS Start */
+
+/* Fonts */
+
+/* Ubuntu */
+
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+
+/* Clash Display */
+
+@font-face {
+  font-family: "clash-display";
+  src: url(../font/ClashDisplay-Semibold.otf);
+}
+
+@font-face {
+  font-family: "clash-display";
+  src: url(../font/ClashDisplay-Bold.otf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Ubuntu", sans-serif;
+  background: #1f2128;
+  scroll-behavior: smooth;
+}
+
+/* Colors */
+
+:root {
+  --primary: #f282c3;
+  --secondary: #f6a22e;
+  --light: #f1f1ff;
+  --gray: #d9d9d9;
+}
+
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+}
+
+.section-spacing {
+  padding: 100px 0;
+}
+
+.section-top h5 {
+  position: relative;
+  font-size: 22px;
+  font-weight: 500;
+  padding-left: 30px;
+  color: var(--secondary);
+}
+
+.section-top h5::after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 17.447px;
+  height: 2.908px;
+  background: var(--secondary);
+}
+
+.section-top h3 {
+  font-family: clash-display;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 45px;
+  color: #ffffff;
+  letter-spacing: 2px;
+}
+
+.section-top h3 span {
+  color: var(--primary);
+}
+
+/* Bootstrap Override */
+@media (min-width: 1300px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+
+@media (min-width: 1500px) {
+  .container {
+    max-width: 1400px;
+  }
+}
+
+/* Base Styles CSS End */
+
+/* Header Part CSS Start */
+
+/* Navbar Section CSS Start */
+
+#body-overlay {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
+#body-overlay.active {
+  display: block;
+}
+
+#Navbar {
+  padding-top: 40px;
+}
+
+.nav-menu-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.navbar-wrapper.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #1f21288c;
+  backdrop-filter: blur(10px);
+  padding: 20px 0;
+  z-index: 999;
+  -webkit-animation: sticky 1.2s;
+  animation: sticky 1.2s;
+}
+
+@keyframes sticky {
+  from {
+    top: -100px;
+  }
+  to {
+    top: 0;
+  }
+}
+
+.main-menu {
+  display: flex;
+  align-items: center;
+}
+
+.nav-menu ul {
+  display: flex;
+  align-items: center;
+}
+
+.nav-menu > ul li {
+  padding: 0 25px;
+}
+
+.nav-menu ul li a {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--light);
+}
+
+.contact-btn a {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--light);
+  background: #f6a22e;
+  padding: 12px 26px 14px;
+  margin-left: 30px;
+  border-radius: 6px;
+}
+
+/* Responsive CSS for Navbar */
+
+@media (max-width: 1199px) {
+  #nav_menu {
+    position: absolute;
+    top: 0;
+    right: 100%;
+    max-width: 454px;
+    width: 100%;
+    height: 100%;
+    background: #1f2128;
+    transition: right 0.3s ease-in-out;
+    z-index: 99;
+  }
+
+  #nav_menu.active {
+    right: 0 !important;
+  }
+
+  #bar_icon {
+    padding-left: 25px;
+    cursor: pointer;
+  }
+
+  #bar_icon img,
+  #cross_icon img {
+    width: 32px;
+  }
+
+  #cross_icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+  }
+
+  .nav-menu ul {
+    flex-direction: column;
+    align-items: start;
+    margin-top: 60px;
+    padding: 0 30px;
+  }
+
+  .nav-menu > ul li {
+    width: 100%;
+    padding: 20px 0;
+    border-bottom: 1px solid #3a3d46;
+  }
+
+  .contact-info {
+    padding-top: 50px;
+  }
+
+  .contact-info ul {
+    margin-top: 0;
+  }
+
+  .contact-info ul li {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    color: var(--light);
+    padding-bottom: 20px;
+  }
+
+  .contact-info ul li a {
+    padding-left: 12px;
+  }
+}
+
+/* Navbar Section CSS End */
+
+/* Hero Section CSS Start */
+
+.hero-wrapper {
+  padding: 100px 0 80px;
+}
+
+.hero-content > span {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 32px;
+  color: var(--light);
+}
+
+.hero-content > span img {
+  padding-right: 8px;
+}
+
+.hero-content h1 {
+  font-size: 58px;
+  font-weight: 700;
+  line-height: 80px;
+  letter-spacing: 1.16px;
+  color: var(--light);
+  padding-top: 20px;
+}
+
+.hero-content h1 span {
+  color: var(--primary);
+}
+
+.hero-content h5 {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 32px;
+  color: #b9b9b9;
+  padding: 15px 150px 0 0;
+}
+
+.hero-buttons {
+  padding-top: 35px;
+}
+
+.hero-img {
+  padding-top: 30px;
+}
+
+/* Hero Section CSS End */
+
+/* Header Part CSS End */
+
+/* Main Part CSS Start */
+
+/* Testimonial Section CSS Start */
+
+.testimonial-card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding-top: 27px;
+}
+
+.testimonial-card {
+  background: #282c37;
+  padding: 22px;
+  margin-top: 26px;
+  border-radius: 10px;
+}
+
+.client-img {
+  max-width: 70px;
+  width: 100%;
+  margin-right: 22px;
+}
+
+.client-img img {
+  max-width: 68px;
+  width: 100%;
+  min-height: 68px;
+  max-height: 68px;
+  height: 100%;
+  border-radius: 100%;
+}
+
+.client-name h5 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--gray);
+  margin-bottom: 0;
+}
+
+.client-name span {
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--gray);
+}
+
+.testimonail-card-content {
+  padding-top: 10px;
+}
+
+.testimonail-card-content p {
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 28px;
+  color: var(--gray);
+  margin-bottom: 0;
+}
+
+/* Testimonial Section CSS End */
+
+/* FAQ Section CSS Start */
+
+.faq-wrapper {
+  padding: 45px 0;
+  background: #181a20;
+}
+
+.faq-top {
+  text-align: center;
+}
+
+.faq-top h2 {
+  font-family: clash-display;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 60px;
+  color: #ffffff;
+  letter-spacing: 2px;
+}
+
+.faq-top h2 span {
+  color: var(--primary);
+}
+
+.faq-top h5 {
+  font-size: 20px;
+  color: var(--light);
+  margin-bottom: 0;
+}
+
+.accordion {
+  padding: 60px 0 40px;
+}
+
+.accordion-item {
+  background: #282c37;
+  border: none;
+  margin-bottom: 22px;
+  border-radius: 4px !important;
+}
+
+.accordion-button,
+.accordion-button:not(.collapsed) {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--light);
+  background: #282c37;
+  padding: 12px 20px;
+  box-shadow: none;
+  border-radius: 4px !important;
+}
+
+.accordion-button::after {
+  width: 33px;
+  height: 33px;
+  background-image: url(../images/chevron-down-icon.svg);
+  background-size: 2rem;
+}
+
+.accordion-button:not(.collapsed)::after {
+  background-image: url(../images/chevron-up-icon.svg);
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+  border: none;
+}
+
+.accordion-body {
+  padding-top: 0;
+}
+
+.accordion-body p {
+  font-size: 16px;
+  color: var(--light);
+  margin-bottom: 0;
+}
+
+.email-us-btn p {
+  font-size: 16px;
+  text-align: center;
+  color: #616672;
+  margin: 0;
+}
+
+.email-us-btn p a {
+  color: var(--primary);
+}
+
+/* FAQ Section CSS End */
+
+/* Contact Section CSS Start */
+
+.contact-content p {
+  font-size: 16px;
+  line-height: 28px;
+  color: var(--light);
+  padding: 20px 0;
+}
+
+.contact-content ul li img {
+  padding-right: 12px;
+}
+
+.contact-content ul li {
+  padding: 8px 0;
+}
+
+.contact-content ul li a {
+  font-size: 16px;
+  color: var(--light);
+}
+
+.contact-form {
+  padding: 30px 50px;
+  margin-left: 40px;
+  background: #282c37;
+  box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+}
+
+.form-input-field {
+  width: 100%;
+}
+
+.form-input-field label,
+.form-textarea-field label {
+  width: 100%;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--light);
+  padding-bottom: 10px;
+}
+
+.form-input-field input,
+.form-textarea-field textarea {
+  width: 100%;
+  color: var(--light);
+  background: #1f2128;
+  padding: 13px 28px;
+  margin-bottom: 15px;
+  border: 1px solid #181b23;
+  border-radius: 5px;
+}
+
+.form-input-field input:focus,
+.form-textarea-field textarea:focus {
+  outline: 0;
+}
+
+.form-btn-field button {
+  width: 192px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--light);
+  background: var(--secondary);
+  padding: 16px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 10px;
+}
+
+.form-btn-field button img {
+  padding-left: 10px;
+}
+
+/* Contact Section CSS End */
+
+/* Main Part CSS End */
+
+/* Footer Part CSS Start */
+
+.footer-wrapper {
+  padding: 30px 0;
+  background: #282c37;
+}
+
+.footer-copyright p {
+  position: relative;
+  font-size: 16px;
+  color: #ffffff;
+  padding-left: 16px;
+  margin-bottom: 0;
+}
+
+.footer-copyright p::before {
+  position: absolute;
+  content: "";
+  top: -5px;
+  left: 0;
+  width: 1px;
+  height: 36px;
+  background: #fff;
+  opacity: 0.4000000059604645;
+}
+
+.footer-menu ul {
+  display: flex;
+  align-items: center;
+}
+.footer-menu ul li {
+  padding-left: 30px;
+}
+
+.footer-menu ul li a {
+  font-size: 16px;
+  color: #fff;
+}
+
+/* Footer Part CSS End */
+
+/* Features Section CSS Start */
+
+.features-wrapper {
+  padding: 45px 0 120px;
+  background: #181a20;
+}
+
+.features-content {
+  padding-right: 100px;
+}
+
+.features-content h6 {
+  font-size: 20px;
+  line-height: 32px;
+  color: var(--light);
+  padding-top: 15px;
+  margin-bottom: 0;
+}
+
+.features-shape {
+  position: absolute;
+  right: 50px;
+  bottom: -75px;
+}
+
+.features-card {
+  min-height: 280px;
+  max-height: 500px;
+  height: 100%;
+  padding: 30px;
+  background: #21232b;
+}
+
+.features-card.gray-bg {
+  background: #2a2c35;
+}
+
+.features-card-icon img {
+  width: 44px !important;
+  height: 44px;
+}
+
+.features-card h5 {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 25px;
+  color: var(--primary);
+  padding: 10px 0;
+}
+
+.features-card p {
+  font-size: 14px;
+  line-height: 26px;
+  color: var(--light);
+  margin-bottom: 0;
+}
+
+.owl-carousel .owl-nav.disabled {
+  display: block;
+}
+
+.owl-nav {
+  position: relative;
+  bottom: -10px;
+}
+
+.owl-prev,
+.owl-next {
+  position: absolute;
+}
+
+.owl-prev {
+  right: 50px;
+}
+
+.owl-next {
+  right: 0;
+}
+
+.owl-theme .owl-nav [class*="owl-"]:hover {
+  background: none;
+}
+
+/* Features Section CSS End */
